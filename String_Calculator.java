@@ -5,8 +5,12 @@ class String_Calculator
     {int k=0;
        String[] na=n.split(x);
        for(String a: na)
-       k+=Integer.parseInt(a);
-        return k;
+      { int p=Integer.parseInt(a);
+    if(p<0)
+    {k=p;   
+      break;}
+    k+=p;
+    } return k;
 
     }
     public static void main(String ar[])
@@ -26,7 +30,9 @@ class String_Calculator
        {k=in.nextLine();
     num+=k+x;}*/
         String_Calculator ob=new String_Calculator();
-        System.out.println(ob.Add(num,x));
-        in.close();
+       int k= ob.Add(num,x);
+       if(k<=0)
+       System.out.println("negatives not allowed :"+k); 
+       in.close();
     }
 }
